@@ -1,7 +1,6 @@
 package com.caesar_cypherfx.caesar_cypherfx;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -9,7 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 
 public class Caesar_Cypher extends Application {
     @Override
@@ -43,7 +41,15 @@ public class Caesar_Cypher extends Application {
     }
 
     public static String encryptSentence(String sentence, int key){
-        return sentence;
+        char[] tab = sentence.toCharArray();
+        StringBuilder encryptedSentence = new StringBuilder();
+
+        for (char c : tab) {
+            c += key;
+            encryptedSentence.append(c);
+        }
+
+        return encryptedSentence.toString();
     }
 
 
