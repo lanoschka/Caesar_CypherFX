@@ -41,10 +41,10 @@ public class Caesar_Cypher extends Application {
     }
 
     public static String encryptSentence(String sentence, int key){
-        char[] tab = sentence.toCharArray();
+        char[] chars = sentence.toCharArray();
         StringBuilder encryptedSentence = new StringBuilder();
 
-        for (char c : tab) {
+        for (char c : chars) {
             c += (char) key;
             encryptedSentence.append(c);
         }
