@@ -45,7 +45,7 @@ public class Caesar_Cypher extends Application {
         StringBuilder encryptedSentence = new StringBuilder();
 
         for (char c : tab) {
-            c += key;
+            c += (char) key;
             encryptedSentence.append(c);
         }
 
