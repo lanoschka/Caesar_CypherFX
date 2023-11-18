@@ -29,9 +29,15 @@ public class Caesar_Cypher extends Application {
 
         encryptButton.setOnAction(e -> {
             String sentence = sentenceField.getText();
-            int key = Integer.parseInt(keyField.getText());
-            String encryptedSentence = encryptSentence(sentence, key);
-            resultLabel.setText("Encrypted sentence is: " + encryptedSentence);
+            String keyText = keyField.getText();
+
+            try {
+                int key = Integer.parseInt(keyText);
+                String encryptedSentence = encryptSentence(sentence, key);
+                resultLabel.setText("Encrypted sentence is: " + encryptedSentence);
+            } catch (NumberFormatException ex) {
+                resultLabel.setText("Error: Please enter a valid numeric key.");
+            }
         });
 
         root.getChildren().addAll(sentenceLabel, sentenceField, keyLabel, keyField, encryptButton, resultLabel);
